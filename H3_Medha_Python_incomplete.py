@@ -142,13 +142,6 @@ Q3: Find the most expensive car’s company name
 • Print most expensive car’s company name and price.
 """
 
-most_expensive_row = df.loc[df['price']==df['price'].max()]
-
-most_expensive_row = most_expensive_row.reset_index(drop=True)
-
-print('company:', most_expensive_row['company'][0])
-
-print('price:', most_expensive_row['price'][0])
 
 
 #%%
@@ -159,8 +152,7 @@ Hint:
 • Use Pandas value_counts().
 """
 
-df_counts = df['company'].value_counts()
-print(df_counts)
+
 
 #%%
 
@@ -168,29 +160,15 @@ print(df_counts)
 Q5: Find each company’s Highest price car
 """
 
-grouped_df_object = df.groupby('company')
-
-df_max_prices = grouped_df_object['price'].max()
-
-#Or can do in one line:
-    
-df_max_prices = df.groupby('company')['price'].max()
-
-print(df_max_prices)
 
 #%%
-
 # Looking at Groupby further 
 # More examples:
 
 groupedby_body_style = df.groupby('body-style')
 
-
-#%%
 print('head')
 print(groupedby_body_style.head())
-head = groupedby_body_style.head()
-# prints up to first five rows for each group
 
 print('groups')
 print(groupedby_body_style.groups)
@@ -214,30 +192,8 @@ print(groupedby_body_style.indices)
 # But .head() or .tail() let you see something? Unsure how that output is related to the object
 # lazy devs.............
 
-# Using a for loop to view contents of groupby object:
+# Using a function  to print and return contents of groupby object:
 
-for name, group in groupedby_body_style:
-    print(name)
-    print(group)
-    print()
-
-#%%
-# As a function:
-
-def show_groupby_obj_contents(obj):
-    for name, group in obj:
-        print(name)
-        print(group)
-        print()
-#    return
-
-# calling the func:
-show_groupby_obj_contents(groupedby_body_style)
-
-#%%
-
-# new func to save output in visible manner:
-    
 def show_groupby_obj_contents(obj):
     groups = {}
     for name, group in obj:
@@ -247,20 +203,14 @@ def show_groupby_obj_contents(obj):
         groups.update({name : df})
     return groups
 
-#%%
 # calling the func:
 contents_groupby_style = show_groupby_obj_contents(groupedby_body_style)
 
-
-#%%
-# All seems to work fine
-
 # To save an individual group:
-    
 convertibles = contents_groupby_style['convertible']
 
-
 #%%
+
 """
 Q6: Find the average mileage of each car making company
 """
