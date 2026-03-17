@@ -114,12 +114,116 @@ df_auto_sorted = df_automobiles.sort_index(axis = 1, ascending = bool(0))
 
 result = df_automobiles.sort_values(by='length')
 
+#%%
+
+df_automobiles.loc[1:10,'wheel-base':'num-of-cylinders']
+# References the label-based index
+
+#%%
+
+df_automobiles.iloc[2:,2:5]
+# IIMPLICIT loc; position-based index, i.e. continuous increasing integer index
+
+#%%
+
+mileage_filter = df_automobiles['average-mileage'] >= 20
+
+old_cars = df_automobiles.loc[df_automobiles['average-mileage'] >= 20]
+
+print(old_cars)
+
+# DataFrame = old_cars
+# Column = 'average-mileage'
+
+
+#%%
+
+data_df = pd.read_csv('data.csv')
+
+Empty_True = pd.isnull(data_df)
+
+Empty_False = pd.notnull(data_df)
+
+#%%
+
+no_na_cols = data_df.dropna(axis = 'columns')
+
+#%%
+
+all_zeros = data_df.fillna('a')
 
 
 
+#%%
 
+# keys: name (tom, mike), age (20,25)
+# entries 
 
+peoples = dict(name = ['tom', 'mike'], age = [20,25])
 
+#%%
+
+df_people = pd.DataFrame(peoples)
+
+dict_people = {'name': ['mike', 'tom'],'score': [68, 75]}
+
+#%%
+
+df_peep = pd.DataFrame(dict_people)
+print(df_people)
+print(df_peep)
+
+#%%
+
+pd.merge(df_peep, df_people, on = 'name')
+
+#%%
+
+df1 = pd.DataFrame(np.random.randn(3, 2), columns=['A', 'B'])
+print(df1)
+
+df2 = pd.DataFrame(np.random.randn(3, 2), columns=['A', 'B'])
+print(df2)
+
+combined_df = pd.concat([df1,df2])
+
+combined_df.reset_index(inplace = True)
+
+#%%
+
+df = pd.read_csv('automobile_data.csv', index_col='index')
+
+#%%
+
+groupedby_body_style = df.groupby('body-style')
+
+#%%
+
+def show_groupby_obj_contents(obj):
+    groups = {}
+    for name, group in obj:
+        print(name)
+        print(group)
+        df = pd.DataFrame(group)
+        groups.update({name : df})
+    return groups
+
+#%%
+
+# calling the func:
+groupby_styleco = show_groupby_obj_contents(df.groupby('body-style',  'company'))
+
+#%%
+multigroup = df.groupby(['body-style', 'num-of-cylinders']).sum()
+
+multigroup.to_csv('multigroup.csv')
+
+multigroup.to_excel('multigroup.xlsx')
+
+#%%
+
+# To save an individual group:
+convertibles = contents_groupby_style['convertible']
 
 
 

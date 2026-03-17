@@ -1,0 +1,16 @@
+body-style,num-of-cylinders,company,wheel-base,length,engine-type,horsepower,average-mileage,price
+convertible,four,alfa-romeroalfa-romero,177.2,337.6,dohcdohc,222,42,29995
+convertible,six,porsche,89.5,168.9,ohcf,207,17,37028
+hardtop,eight,mercedes-benz,112.0,199.2,ohcv,184,14,45400
+hardtop,six,porsche,89.5,168.9,ohcf,207,17,34028
+hatchback,four,chevroletdodgedodgemazdamazdamazdamitsubishimitsubishitoyotatoyotatoyota,1035.7,1738.5,ohcohcohcohcohcohcohcohcohcohcohc,732,357,66738
+hatchback,six,alfa-romero,94.5,171.2,ohcv,154,19,16500
+hatchback,two,mazda,95.3,169.0,rotor,101,17,11845
+sedan,eight,mercedes-benz,120.9,208.1,ohcv,184,14,40960
+sedan,five,audiaudimercedes-benz,309.2,544.8,ohcohcohc,348,59,58252
+sedan,four,audibmwbmwchevrolethondahondaisuzumazdamitsubishimitsubishinissannissannissanvolkswagenvolkswagenvolkswagenvolkswagenvolvo,1758.5,3095.5,ohcohcohcohcohcohcohcohcohcohcohcohcohcohcohcohcohcohc,1497,519,184754
+sedan,six,bmwbmwbmwbmwjaguarjaguarnissan,744.6,1340.4,ohcohcohcohcdohcdohcohcv,1171,117,211224
+sedan,twelve,jaguar,102.0,191.7,ohcv,262,13,36000
+wagon,five,audimercedes-benz,215.8,383.6,ohcohc,233,41,47168
+wagon,four,hondanissantoyotatoyotatoyotavolvovolvo,686.7,1214.0,ohcohcohcohcohcohcohc,559,192,65068
+wagon,six,toyota,104.5,187.8,dohc,156,19,15750
